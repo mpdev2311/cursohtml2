@@ -49,5 +49,15 @@ $extlink.addEventListener('click',openlink,false);
 function openlink() {
     window.open('https://www.blogger.com','blank');
 }
+const $intlink = document.querySelectorAll('.int-link')[1];
+const $transparenciaSect = document.querySelector('#transparencia');
+$intlink.addEventListener('click',scrollToSect,false);
+function scrollToSect() {   
+    window.scrollTo({
+        top: $transparenciaSect.offsetTop - $navBar.offsetHeight,
+        left: 0,
+        behavior: 'smooth'
+    });    
+}
 
 </script>
