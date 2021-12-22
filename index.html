@@ -14,10 +14,10 @@
             </div>
             <nav class="nav-bar abs-pos">
                 <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#participe">Participe</a></li>
-                    <li><a href="https://www.blogger.com/" target="_blank">Blog</a></li>
-                    <li><a href="#transparencia">Transparência</a></li>
+                    <li class="imt-link">Sobre</a></li>
+                    <li class="int-link">Participe</a></li>
+                    <li class="ext-link">Blog</a></li>
+                    <li class="int-link">Transparência</a></li>
                 </ul>
             </nav>
         </header>
@@ -43,6 +43,11 @@ function toggleNavBar() {
         $navBar.classList.add('abs-pos');
         $navBar.classList.remove('fix-pos');
     }
+} 
+const $extlink=document.querySelectorAll('.ext-link')[0];
+$extlink.addEventListener('click',openlink,false);
+function openlink() {
+    window.open('https://www.blogger.com','blank');
 }
 
 </script>
