@@ -14,7 +14,7 @@
             </div>
             <nav class="nav-bar abs-pos">
                 <ul>
-                    <li class="imt-link">Sobre</a></li>
+                    <li class="int-link">Sobre</a></li>
                     <li class="int-link">Participe</a></li>
                     <li class="ext-link">Blog</a></li>
                     <li class="int-link">Transparência</a></li>
@@ -26,8 +26,7 @@
             <section id="sobre">Sobre</section>
             <section id="participe">Participe</section>
             <section id="transparencia">Transparência</section>            
-        </main>
-       
+        </main>       
     </body>
 </html>
 <script>
@@ -49,15 +48,15 @@ $extlink.addEventListener('click',openlink,false);
 function openlink() {
     window.open('https://www.blogger.com','blank');
 }
-const $intlink = document.querySelectorAll('.int-link')[1];
-const $transparenciaSect = document.querySelector('#transparencia');
-$intlink.addEventListener('click',scrollToSect,false);
-function scrollToSect() {   
-    window.scrollTo({
-        top: $transparenciaSect.offsetTop - $navBar.offsetHeight,
-        left: 0,
-        behavior: 'smooth'
-    });    
-}
-
+const $intlinks = document.querySelectorAll('.int-link');
+const $sectArr = document.querySelectorAll('main section');
+$intlinks.forEach(function (cur,idx) {
+    cur.addEventListener('click',function () {
+        window.scrollTo({
+            top: $sectArr[idx].offsetTop - $navBar.offsetHeight,
+            left: 0,
+            behavior: 'smooth'
+        }); 
+    },false);
+})
 </script>
